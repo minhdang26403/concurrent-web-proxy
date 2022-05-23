@@ -54,6 +54,8 @@ General working of the cache: For each active connection, we create a buffer to 
 
 In addition, accesses to cache must be thread-safe. To solve this problem, I implemented a readers-writers lock that favors readers. Specifically, multiple threads are able to read from the cache simultaneously. However, only one thread can write to the cache at a time. If there is any thread reading the cache, the thread that wants to update the cache must wait until no thread reads the cache.
 
+There are two ways that I came up with to design a cache: array and queue based on a linked list. I chose to use a doubly-linked list to implement the cache since we don't know the number of cache blocks beforehand. Using an array, we have to specify the number of cache blocks when initializing it, while using a linked list allows the cache grows dynamically. Also, for each cache block, we should be careful to use pointers to point to buffer holding web objects instead of initializing a fixed-size buffer. Thus, we can save memory. Lastly, using a queue implemented by linked-list, we don't have to use a global variable to keep track of time. If we use a global time variable, we have to use a mutex (semaphore) to lock other threads every time we update that variable, which will incur a nontrivial cost to our program.
+
 ## Usage
 
 The web proxy must be run on operating systems of Unix family.
