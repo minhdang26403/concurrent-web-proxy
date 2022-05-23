@@ -8,7 +8,7 @@
 #define PROTLEN 7 /* Length of http:// */
 #define VERLEN 8 /* Length of HTTP/1.0 and HTTP/1.0 */
 
-/* You won't lose style points for including this long line in your code */
+/* Headers for http request */
 static const char *user_agent_hdr = "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:10.0.3) Gecko/20120305 Firefox/10.0.3\r\n";
 static const char *host_key = "Host";
 static const char *connection_hdr = "Connection: close\r\n";
