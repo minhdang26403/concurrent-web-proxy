@@ -29,14 +29,14 @@
  **************************/
 /* $begin errorfuns */
 /* $begin unixerror */
-void unix_error(char *msg) /* Unix-style error */
+void unix_error(char *msg) /* Unix-style error */ 
 {
-    fprintf(stderr, "%s: %s\n", msg, strerror(errno));
-    exit(0);
+  fprintf(stderr, "%s: %s\n", msg, strerror(errno));
+  exit(0);
 }
 /* $end unixerror */
 
-void posix_error(int code, char *msg) /* Posix-style error */
+void posix_error(int code, char *msg) /* Posix-style error */ 
 {
     fprintf(stderr, "%s: %s\n", msg, strerror(code));
     exit(0);

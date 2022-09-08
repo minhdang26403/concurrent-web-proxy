@@ -7,11 +7,11 @@
 
 /* Global variables for the web cache*/
 typedef struct cache_obj {
-    struct cache_obj *prev;
-    struct cache_obj *next;
-    char *tag;
-    char *buf;
-    size_t size;
+  struct cache_obj *prev;
+  struct cache_obj *next;
+  char *tag;
+  char *buf;
+  size_t size;
 } cache_object;
 
 /* Helper functions for the web cache */
