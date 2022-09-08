@@ -42,9 +42,7 @@ There are two possible ways to design a current web proxy:
 
 ![Prethreaded server](images/prethreaded-server.png)
 
-The disadvantage of the first approach is that we incur the cost of creating a new thread for each new client (change registers, stack pointers, program counters, etc). The advantage of a prethreaded server is that we can reduce the overhead of creating new threads. However, I chose to use the first approach since we don't know how many work threads can handle multiple clients efficiently.
-
-If we create too many worker threads, some of them will never be used, thus wasting operating system's resources. If there are just a few worker threads, the server will be slow since worker threads are busy servicing some clients, making other clients wait.
+The disadvantage of the first approach is that we incur the cost of creating a new thread for each new client (change registers, stack pointers, program counters, etc). The advantage of a prethreaded server is that we can reduce the overhead of creating new threads. Therefore, I chose to use the second approach.
 
 ### 3. Part III: Concurrent web proxy with cache
 
