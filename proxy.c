@@ -46,7 +46,6 @@ int main(int argc, char **argv) {
   Sem_init(&mutex, 0, 1);
   Sem_init(&mutex_w, 0, 1);
 
-  int listenfd;
   int listenfd = Open_listenfd(argv[1]);
 
   pthread_t tid;
